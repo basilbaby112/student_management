@@ -7,20 +7,28 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Student</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Maths</th>
+                <th>Science</th>
+                <th>History</th>
                 <th>Term</th>
-                <th>Subject</th>
-                <th>Marks</th>
-                <th>Actions</th>
+                <th>Total Marks</th>
+                <th>Created On</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach($marks as $mark)
                 <tr>
+                    <td>{{ $mark->student->id }}</td>
                     <td>{{ $mark->student->name }}</td>
+                    <td>{{ $mark->maths }}</td>
+                    <td>{{ $mark->science}}</td>
+                    <td>{{ $mark->history }}</td>
                     <td>{{ $mark->term }}</td>
-                    <td>{{ $mark->subject }}</td>
-                    <td>{{ $mark->marks }}</td>
+                    <td>{{($mark->maths)+($mark->science)+($mark->history)}}</td>
+                    <td>{{ $mark->created_at }}</td>
                     <td>
                         <a href="{{ route('marks.edit', $mark) }}">Edit</a>
                         <form action="{{ route('marks.destroy', $mark) }}" method="POST">

@@ -9,7 +9,7 @@ class Mark extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['student_id', 'term', 'subject', 'marks'];
+    protected $fillable = ['student_id', 'term', 'maths', 'science','history'];
 
     public function student()
     {

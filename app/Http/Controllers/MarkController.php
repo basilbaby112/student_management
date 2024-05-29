@@ -11,6 +11,7 @@ class MarkController extends Controller
     public function index()
     {
         $marks = Mark::with('student')->get();
+        // dd($marks);
         return view('marks.index', compact('marks'));
     }
 
@@ -25,8 +26,9 @@ class MarkController extends Controller
         $request->validate([
             'student_id' => 'required|exists:students,id',
             'term' => 'required',
-            'subject' => 'required',
-            'marks' => 'required|integer',
+            'maths' => 'required|integer',
+            'science' => 'required|integer',
+            'history' => 'required|integer',
         ]);
 
         Mark::create($request->all());
@@ -41,11 +43,13 @@ class MarkController extends Controller
 
     public function update(Request $request, Mark $mark)
     {
+        // print_r($request->all()); exit;
         $request->validate([
             'student_id' => 'required|exists:students,id',
             'term' => 'required',
-            'subject' => 'required',
-            'marks' => 'required|integer',
+            'maths' => 'required|integer',
+            'science' => 'required|integer',
+            'history' => 'required|integer',
         ]);
 
         $mark->update($request->all());

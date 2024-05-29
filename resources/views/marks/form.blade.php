@@ -20,19 +20,28 @@
         </div>
         <div>
             <label>Term</label>
-            <input type="text" name="term" value="{{ isset($mark) ? $mark->term : '' }}">
-        </div>
-        <div>
-            <label>Subject</label>
-            <select name="subject">
-                <option value="maths" {{ isset($mark) && $mark->subject == 'maths' ? 'selected' : '' }}>Maths</option>
-                <option value="science" {{ isset($mark) && $mark->subject == 'science' ? 'selected' : '' }}>Science</option>
-                <option value="history" {{ isset($mark) && $mark->subject == 'history' ? 'selected' : '' }}>History</option>
+            @php
+                $terms =['one','two','three'];
+            @endphp
+            <select name="term" id="">
+                <option value="">select</option>
+                @foreach ($terms as $term)
+                <option value="{{$term}}" {{isset($mark)&& $mark->term == $term ? 'selected' : ''}}>{{$term}}</option>
+                @endforeach
             </select>
+            {{-- <input type="text" name="term" value="{{ isset($mark) ? $mark->term : '' }}"> --}}
         </div>
         <div>
-            <label>Marks</label>
-            <input type="number" name="marks" value="{{ isset($mark) ? $mark->marks : '' }}">
+            <label>Maths</label>
+            <input type="number" name="maths" value="{{ isset($mark) ? $mark->maths : ''}}">
+            <label>Science</label>
+            <input type="number" name="science" value="{{ isset($mark) ? $mark->science : ''}}">
+            <label>History</label>
+            <input type="number" name="history" value="{{ isset($mark) ? $mark->history : ''}}">
+            
+        </div>
+        <div>
+            
         </div>
         <button type="submit">Submit</button>
     </form>
