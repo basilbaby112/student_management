@@ -4,7 +4,7 @@
 <div class="container">
     <h3>Marks</h3>
     <a href="{{ route('marks.create') }}">Add Marks</a>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Student</th>

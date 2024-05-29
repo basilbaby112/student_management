@@ -4,13 +4,13 @@
 <div class="container">
     <h3>Students</h3>
     <a href="{{ route('students.create') }}">Add Student</a>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Gender</th>
-                <th>Teacher</th>
+                <th>Reporting Teacher</th>
                 <th>Actions</th>
             </tr>
         </thead>
