@@ -28,7 +28,7 @@
                     <td>{{ $mark->history }}</td>
                     <td>{{ $mark->term }}</td>
                     <td>{{($mark->maths)+($mark->science)+($mark->history)}}</td>
-                    <td>{{ $mark->created_at }}</td>
+                    <td>{{ $mark->first()->created_at->format('M d, Y h:i A') }}</td>
                     <td>
                         <a href="{{ route('marks.edit', $mark) }}">Edit</a>
                         <form action="{{ route('marks.destroy', $mark) }}" method="POST">
