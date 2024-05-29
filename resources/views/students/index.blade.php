@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('content')
-    <h1>Students</h1>
+<div class="container">
+    <h3>Students</h3>
     <a href="{{ route('students.create') }}">Add Student</a>
     <table>
         <thead>
@@ -32,4 +33,5 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

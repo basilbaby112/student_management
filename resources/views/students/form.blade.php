@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('content')
-    <h1>{{ isset($student) ? 'Edit' : 'Add' }} Student</h1>
+<div class="container">
+    <h3>{{ isset($student) ? 'Edit' : 'Add' }} Student</h3>
 
     <form action="{{ isset($student) ? route('students.update', $student) : route('students.store') }}" method="POST">
         @csrf
@@ -34,4 +35,5 @@
         </div>
         <button type="submit">Submit</button>
     </form>
+</div>
 @endsection

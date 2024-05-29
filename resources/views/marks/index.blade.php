@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('content')
-    <h1>Marks</h1>
+<div class="container">
+    <h3>Marks</h3>
     <a href="{{ route('marks.create') }}">Add Marks</a>
     <table>
         <thead>
@@ -32,4 +33,5 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

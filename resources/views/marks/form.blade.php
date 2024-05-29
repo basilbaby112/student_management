@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('content')
-    <h1>{{ isset($mark) ? 'Edit' : 'Add' }} Marks</h1>
+<div class="container">
+    <h3>{{ isset($mark) ? 'Edit' : 'Add' }} Marks</h3>
 
     <form action="{{ isset($mark) ? route('marks.update', $mark) : route('marks.store') }}" method="POST">
         @csrf
@@ -35,4 +36,5 @@
         </div>
         <button type="submit">Submit</button>
     </form>
+</div>
 @endsection
